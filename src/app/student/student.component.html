@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="panel-heading">
+        <h3 class="panel-title">Student infomation</h3>
+      </div>
+      <div class="panel-body">
+        <form novalidate class="row justify-content-md-center">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label"
+                >Name:</label
+              >
+              <div class="col-md-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  [(ngModel)]="student.name"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label"
+                >Address:</label
+              >
+              <div class="col-md-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="address"
+                  name="address"
+                  [(ngModel)]="student.address"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label"
+                >Age:</label
+              >
+              <div class="col-md-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="age"
+                  name="age"
+                  [(ngModel)]="student.age"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-md-2 col-form-label"
+                >Teacher:</label
+              >
+              <div class="col-md-10">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="teacher"
+                  name="teacher"
+                  [(ngModel)]="student.teacher"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-10 offset-md-2">
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  (click)="onSubmit()"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Teacher</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of students">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.address }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.teacher }}</td>
+
+              <td>
+                <button
+                  type="button"
+                  class="btn btn-default btn-sm"
+                  (click)="onDelete(user.id)"
+                >
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
